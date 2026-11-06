@@ -1,7 +1,7 @@
 # pgm: known limits
 
-- **The paper is given, and it describes the algorithm in prose only.** `~/papers/` (`pgm-index.pdf` + `.txt`) holds the VLDB 2020 paper (PDF
-  and extracted text). Section 2.1 explains the convex-hull idea and cites O'Rourke for the optimal streaming
+- **The paper is given, and it describes the algorithm in prose only.** `~/papers/pgm-index.pdf` is the VLDB 2020
+  paper; `poppler-utils` is in the image so it can be read offline. Section 2.1 explains the convex-hull idea and cites O'Rourke for the optimal streaming
   algorithm; turning that into code inside this repo is the task.
 - **Agents may know the method.** The paper (2020) and its code are public and likely in training data.
 - **Gate is the bottom level.** Pass = correct, and no more bottom-level segments than the authors' code on every

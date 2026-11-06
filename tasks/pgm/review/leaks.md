@@ -15,4 +15,4 @@ The built-image listing is added in M3.
 
 Raw output: `for p in hull convex rectangle 'cross(' Slope 'struct Point' extreme lower_start upper_start points_in_hull outside_line Rourke optimal get_intersection get_slope_range intercept_n rounding_term feasib Theorem; do grep -rnIi -- "$p" tasks/pgm/repo; done`
 
-The paper (VLDB 2020, PDF + extracted text) is given to the agent in `~/papers/` (`pgm-index.pdf` + `.txt`); it is not part of the repo.
+The paper (VLDB 2020, PDF) is given to the agent at `~/papers/pgm-index.pdf`; it is not part of the repo.

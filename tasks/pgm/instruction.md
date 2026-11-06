@@ -1,7 +1,7 @@
 `~/PGM-index` is our copy of the PGM-index library. `include/pgm/piecewise_linear_model.hpp` only has a
 placeholder, so the index builds far more segments than it should. Please implement the paper's optimal piecewise
 linear ε-approximation there, so that every level of the index gets the minimum number of segments for its ε.
-The paper is in `~/papers/pgm-index.pdf`, with a text copy in `~/papers/pgm-index.txt`.
+The paper is in `~/papers/pgm-index.pdf`.
 
 Constraints:
 - Change only that header, and keep the names and signatures the rest of the library uses.
