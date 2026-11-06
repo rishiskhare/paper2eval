@@ -1,0 +1,10 @@
+{
+  "stub": {"pass": 0, "gate_failed": "metric"},
+  "shrinking-cone": {"pass": 0, "gate_failed": "metric"},
+  "eps-off-by-one": {"pass": 0, "gate_failed": "correctness"},
+  "edit-pgm-index": {"pass": 0, "gate_failed": "allowed_files"},
+  "paper-literal": {"pass": 1, "gate_failed": null},
+  "scratch-files": {"pass": 1, "gate_failed": null},
+  "tamper": {"pass": 0, "gate_failed": "metric"},
+  "reference": {"pass": 1, "gate_failed": null}
+}
