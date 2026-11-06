@@ -1,0 +1,72 @@
+{
+  "workloads": {
+    "dev_uniform": {
+      "sha256": "fb5756521793ee5eccf9760ae1b44f6eed0ecdb8f4866b04105527309d9cb651",
+      "eps": {
+        "32": {
+          "bottom_segments": 276,
+          "total_segments": 277
+        },
+        "64": {
+          "bottom_segments": 66,
+          "total_segments": 67
+        },
+        "128": {
+          "bottom_segments": 14,
+          "total_segments": 15
+        }
+      }
+    },
+    "dev_lognormal": {
+      "sha256": "ded168c3e7432dbc3b8428de7f168198d743680cd2a4e23bb3f94b05032530cd",
+      "eps": {
+        "32": {
+          "bottom_segments": 284,
+          "total_segments": 291
+        },
+        "64": {
+          "bottom_segments": 106,
+          "total_segments": 111
+        },
+        "128": {
+          "bottom_segments": 67,
+          "total_segments": 71
+        }
+      }
+    },
+    "dev_normal": {
+      "sha256": "3f91a43542c8d3ca4977c744cae61a5c351d9a235dfdcdf89c3f409713dfcb48",
+      "eps": {
+        "32": {
+          "bottom_segments": 298,
+          "total_segments": 305
+        },
+        "64": {
+          "bottom_segments": 106,
+          "total_segments": 110
+        },
+        "128": {
+          "bottom_segments": 54,
+          "total_segments": 57
+        }
+      }
+    },
+    "dev_clustered": {
+      "sha256": "455298211692b3a0bd545f699759442c19693b3e5a22aee5a6fcbe09a95bf4e7",
+      "eps": {
+        "32": {
+          "bottom_segments": 1472,
+          "total_segments": 1560
+        },
+        "64": {
+          "bottom_segments": 980,
+          "total_segments": 1030
+        },
+        "128": {
+          "bottom_segments": 737,
+          "total_segments": 768
+        }
+      }
+    }
+  }
+}
