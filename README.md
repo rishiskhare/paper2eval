@@ -58,8 +58,7 @@ Results land in `jobs/<timestamp>/`. The trace is in `agent/`, and the grader's 
 ## Sample trace
 
 [`jobs/2026-11-06__16-11-25/`](jobs/2026-11-06__16-11-25/) is a full run of GPT-5.6 Luna through Codex on `tasks/pgm`. It
-built the repo and ran its tests, but it scored 0: on the held-out `gaps` data at ε=32 it used 5,001 segments, where the
-authors' code uses 3,545.
+scored 0 because its solution wasn't as optimized as the paper's method.
 
 - Agent trace: [`trajectory.json`](jobs/2026-11-06__16-11-25/pgm__Cmk2due/agent/trajectory.json) and
   [`codex.txt`](jobs/2026-11-06__16-11-25/pgm__Cmk2due/agent/codex.txt)
