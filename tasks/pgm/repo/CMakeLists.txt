@@ -40,3 +40,6 @@ if (BUILD_PGM_BENCHMARK)
 endif ()
 
 add_subdirectory(c-interface)
+
+enable_testing()
+add_subdirectory(test)
