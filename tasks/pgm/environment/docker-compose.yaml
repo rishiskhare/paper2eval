@@ -1,0 +1,6 @@
+# Build from the task root so the image can take repo/ and the public harness without copying paper code around.
+services:
+  main:
+    build:
+      context: ..
+      dockerfile: environment/Dockerfile
