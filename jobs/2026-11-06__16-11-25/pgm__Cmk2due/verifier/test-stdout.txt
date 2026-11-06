@@ -1,0 +1,37 @@
+In file included from include/pgm/pgm_index.hpp:18,
+                 from /opt/pgm-verifier/count.cpp:10:
+include/pgm/piecewise_linear_model.hpp:32:73: note: '#pragma message: Compilation with -fopenmp is optional but recommended'
+   32 | #pragma message ("Compilation with -fopenmp is optional but recommended")
+      |                                                                         ^
+In file included from include/pgm/pgm_index.hpp:18,
+                 from test/tests.cpp:18:
+include/pgm/piecewise_linear_model.hpp:32:73: note: '#pragma message: Compilation with -fopenmp is optional but recommended'
+   32 | #pragma message ("Compilation with -fopenmp is optional but recommended")
+      |                                                                         ^
+include/pgm/piecewise_linear_model.hpp: In instantiation of 'std::pair<long double, long double> pgm::internal::OptimalPiecewiseLinearModel<X, Y>::CanonicalSegment::get_slope_range() const [with X = unsigned int; Y = long unsigned int]':
+include/pgm/pgm_index_variants.hpp:247:85:   required from 'static std::tuple<std::vector<Floating, std::allocator<_Tp2> >, std::vector<unsigned int, std::allocator<unsigned int> >, std::vector<long int, std::allocator<long int> > > pgm::CompressedPGMIndex<K, Epsilon, EpsilonRecursive, Floating>::merge_slopes(const std::vector<typename pgm::internal::OptimalPiecewiseLinearModel<K, long unsigned int>::CanonicalSegment>&) [with K = unsigned int; long unsigned int Epsilon = 8; long unsigned int EpsilonRecursive = 4; Floating = float; typename pgm::internal::OptimalPiecewiseLinearModel<K, long unsigned int>::CanonicalSegment = pgm::internal::OptimalPiecewiseLinearModel<unsigned int, long unsigned int>::CanonicalSegment]'
+include/pgm/pgm_index_variants.hpp:134:56:   required from 'pgm::CompressedPGMIndex<K, Epsilon, EpsilonRecursive, Floating>::CompressedPGMIndex(Iterator, Iterator) [with Iterator = __gnu_cxx::__normal_iterator<const unsigned int*, std::vector<unsigned int> >; K = unsigned int; long unsigned int Epsilon = 8; long unsigned int EpsilonRecursive = 4; Floating = float]'
+include/pgm/pgm_index_variants.hpp:101:106:   required from 'pgm::CompressedPGMIndex<K, Epsilon, EpsilonRecursive, Floating>::CompressedPGMIndex(const std::vector<T>&) [with K = unsigned int; long unsigned int Epsilon = 8; long unsigned int EpsilonRecursive = 4; Floating = float]'
+test/tests.cpp:106:42:   required from 'void C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_F_U_N_C_9() [with long unsigned int E = 8]'
+test/tests.cpp:104:1:   required from 'void {anonymous}::ns_C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10::reg_test(Nttp<E>, Catch::NameAndTags) [with long unsigned int E = 8]'
+test/tests.cpp:104:1:   required from '{anonymous}::ns_C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10::C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10<Types>::C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10() [with Types = {{anonymous}::ns_C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10::Nttp<8>, {anonymous}::ns_C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10::Nttp<32>, {anonymous}::ns_C_A_T_C_H_T_E_M_P_L_A_T_E_T_E_S_T_10::Nttp<128>}]'
+test/tests.cpp:104:1:   required from here
+include/pgm/piecewise_linear_model.hpp:163:41: note: parameter passing for argument of type 'std::pair<long double, long double>' when C++17 is enabled changed to match C++14 in GCC 10.1
+  163 |     std::pair<long double, long double> get_slope_range() const {
+      |                                         ^~~~~~~~~~~~~~~
+uniform 32 365
+uniform 64 84
+uniform 128 24
+near_max 32 375
+near_max 64 92
+near_max 128 25
+clustered 32 396
+clustered 64 111
+clustered 128 47
+gaps 32 5001
+gaps 64 1425
+gaps 128 406
+dense_runs 32 1931
+dense_runs 64 1885
+dense_runs 128 1707
+FAIL: more segments than the authors' optimal counts
