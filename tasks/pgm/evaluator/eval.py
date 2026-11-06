@@ -16,6 +16,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pgm_check  # noqa: E402
 
+# The trusted index may add one segment depending on where the last line lands (pgm_index.hpp), so an optimal
+# segmentation can differ from the reference by one. The non-optimal methods miss by far more.
+SEGMENT_TOLERANCE = 1
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -28,13 +32,12 @@ def main():
     ap.add_argument("--record-reference", help="write measured values here instead of scoring")
     ap.add_argument("--workdir", required=True)
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--verifier-tag", default="unknown")
     a = ap.parse_args()
 
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
     work = Path(a.workdir).resolve()
-    res = {"task": "pgm", "verifier_tag": a.verifier_tag, "metric": "bottom-level segments (= segments_per_level[0]), must be <= the optimal reference",
+    res = {"task": "pgm", "metric": "bottom-level segments (= segments_per_level[0]), must be within SEGMENT_TOLERANCE of the optimal reference",
            "gates": {}, "gate_failed": None, "reason": None, "workloads": {}}
 
     def finish(passed=0):
@@ -100,9 +103,9 @@ def main():
         for e, v in m["eps"].items():
             r = ref["workloads"][n]["eps"][e]
             v.update({"bottom_segments": v["segments_per_level"][0], "reference_bottom_segments": r["bottom_segments"],
-                      "reference_total_segments": r["total_segments"], "threshold": f"bottom <= {r['bottom_segments']}"})
+                      "reference_total_segments": r["total_segments"], "threshold": f"bottom <= {r['bottom_segments'] + SEGMENT_TOLERANCE}"})
             checked += 1
-            if v["bottom_segments"] > r["bottom_segments"]:
+            if v["bottom_segments"] > r["bottom_segments"] + SEGMENT_TOLERANCE:
                 worse.append(f"{n}/eps={e} ({v['bottom_segments']} > {r['bottom_segments']})")
     res["gates"]["metric"] = {"ok": not worse, "worse_than_reference": worse}
     if worse:

@@ -77,10 +77,7 @@ def _sandbox(box):
     """As root: run the submission's process as SANDBOX_USER, writing only to `box`. Otherwise run as-is."""
     if os.geteuid() != 0:
         return []
-    try:
-        u = pwd.getpwnam(SANDBOX_USER)
-    except KeyError:
-        return []
+    u = pwd.getpwnam(SANDBOX_USER)  # no fallback: grading must not run the submission as root
     os.chown(box, u.pw_uid, u.pw_gid)
     return ["setpriv", f"--reuid={u.pw_uid}", f"--regid={u.pw_gid}", "--clear-groups", "--"]
 

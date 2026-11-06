@@ -1,6 +1,0 @@
-{"workloads": [
-  {"name": "dev_uniform", "kind": "uniform", "seed": 101, "n": 1000000, "params": {"bits": 52}},
-  {"name": "dev_lognormal", "kind": "lognormal", "seed": 102, "n": 1000000},
-  {"name": "dev_normal", "kind": "normal", "seed": 103, "n": 1000000},
-  {"name": "dev_clustered", "kind": "clustered", "seed": 104, "n": 1000000}
-]}

@@ -1,4 +1,4 @@
-# Build from the task root so the image can take repo/ and the public harness without copying paper code around.
+# Build from the task root so the image can take repo/ and the paper.
 services:
   main:
     build:

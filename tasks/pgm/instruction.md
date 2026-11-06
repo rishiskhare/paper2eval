@@ -8,6 +8,3 @@ Constraints:
 - Standard C++ headers only. The code must not read files, use the network, start processes, read environment
   variables or print anything.
 - No hard-coded data: the result has to work on any sorted key set.
-
-`pgm-check` builds the index on a few sample key sets at ε = 32, 64 and 128. It checks every lookup with the
-untouched `pgm_index.hpp` and shows your segment counts next to the upstream implementation's.

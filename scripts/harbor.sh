@@ -15,6 +15,11 @@ supports_network_block() {
     >/dev/null 2>&1
 }
 
+if ! docker info >/dev/null 2>&1; then
+  echo "Docker isn't running. Start it and try again." >&2
+  exit 1
+fi
+
 if ! supports_network_block; then
   if ! command -v colima >/dev/null; then
     echo "This Docker engine can't block agent internet access. On a Mac: brew install colima" >&2
