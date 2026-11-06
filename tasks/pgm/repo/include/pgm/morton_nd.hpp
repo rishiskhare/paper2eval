@@ -227,6 +227,7 @@ using MortonNDBmi_3D_64 = MortonNDBmi<3, uint64_t>;
 #ifndef mortonND_encoder_h
 #define mortonND_encoder_h
 
+#include <cstdint>
 #include <cmath>
 #include <array>
 #include <tuple>
