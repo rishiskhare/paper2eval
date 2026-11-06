@@ -74,7 +74,9 @@ check_task() {
   done
   local rc; rc=$(git rev-list --count "$st..$ref")
   [ "$rc" = 1 ] && [ "$(git log -1 --format=%s "$ref" | cut -c1-5)" = "[ref]" ] && ok "$ref is one [ref] commit on top of $st" || bad "$ref must be exactly one [ref] commit after $st"
-  [ -z "$(git diff "$st" main -- "$repo")" ] && ok "main's $repo == $st (reference not on main)" || bad "main's $repo differs from $st"
+  # Each task lives on main or on a side branch named after it.
+  local home=main; git cat-file -e "main:$repo" 2>/dev/null || home=$t
+  [ -z "$(git diff "$st" "$home" -- "$repo")" ] && ok "$home's $repo == $st (reference not on $home)" || bad "$home's $repo differs from $st"
 
   echo "-- [3] committed patches match regenerated ones"
   local ev=tasks/$t/evaluator
