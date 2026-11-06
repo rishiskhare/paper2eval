@@ -24,7 +24,7 @@ the paper's method.
 
 | Path | Contents |
 |---|---|
-| `tasks/pgm/` | [PGM-index](https://github.com/gvinciguerra/PGM-index): re-implement the optimal piecewise linear segmentation from the VLDB 2020 paper. See `review/limits.md` for what a pass doesn't prove. |
+| `tasks/pgm/` | [PGM-index](https://github.com/gvinciguerra/PGM-index): re-implement the optimal piecewise linear segmentation from the VLDB 2020 paper. |
 | `scripts/harbor.sh` | Runs Harbor on a Docker engine that can enforce the agent's network block. |
 | `.claude/skills/paper-to-eval/` | A skill that guides an agent through building a new task from a paper. |
 | `jobs/` | Past runs, including the sample trace below. |
