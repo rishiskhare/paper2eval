@@ -1,1 +1,1 @@
-# paperbench-v2/fsst
+# paper2eval/fsst
