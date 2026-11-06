@@ -1,0 +1,11 @@
+{
+    "task": {
+        "path": "tasks/pgm"
+    },
+    "trial_name": "pgm__WsonMBy",
+    "trials_dir": "jobs/2026-11-06__12-22-03",
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "0f803b9f-73d7-4039-aaa7-db99d959e044"
+}
