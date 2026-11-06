@@ -1,0 +1,15 @@
+uniform 32 270
+uniform 64 64
+uniform 128 17
+near_max 32 270
+near_max 64 68
+near_max 128 19
+clustered 32 283
+clustered 64 83
+clustered 128 40
+gaps 32 3545
+gaps 64 1014
+gaps 128 286
+dense_runs 32 1911
+dense_runs 64 1836
+dense_runs 128 1583
