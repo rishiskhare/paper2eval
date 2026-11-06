@@ -22,6 +22,9 @@ collect = []
 
 [agent]
 timeout_sec = 2700.0
+# No internet while the agent works; Harbor adds only the agent's model API host.
+network_mode = "allowlist"
+allowed_hosts = []
 
 [environment]
 network_mode = "public"
