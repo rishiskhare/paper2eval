@@ -1,1 +1,1 @@
-# paperbench-v2/pgm
+# paper2eval/pgm

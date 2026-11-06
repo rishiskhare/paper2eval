@@ -1,1 +1,1 @@
-# paperbench-v2
+# paper2eval

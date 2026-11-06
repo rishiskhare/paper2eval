@@ -2,7 +2,7 @@ schema_version = "1.4"
 artifacts = []
 
 [task]
-name = "paperbench-v2/fsst"
+name = "paper2eval/fsst"
 version = "1.0.0"
 description = ""
 authors = []

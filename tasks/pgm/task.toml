@@ -4,11 +4,11 @@ source = "/home/dev/PGM-index"
 exclude = ["build", ".git", "cmake-build-*"]
 
 [task]
-name = "paperbench-v2/pgm"
+name = "paper2eval/pgm"
 version = "1.0.0"
 description = "Re-implement the optimal streaming piecewise linear segmentation of the PGM-index"
 authors = []
-keywords = ["c++", "learned-index", "algorithms", "paperbench"]
+keywords = ["c++", "learned-index", "algorithms", "paper2eval"]
 
 [metadata]
 
