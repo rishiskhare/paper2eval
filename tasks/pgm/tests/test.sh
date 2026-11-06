@@ -9,7 +9,7 @@ RUN="setpriv --reuid=grader --regid=grader --clear-groups"
 
 mkdir -p "$OUT" && chmod 755 "$OUT" 2>/dev/null
 echo 0 > "$OUT/reward.txt"
-fail() { echo "FAIL: $*"; exit 0; }
+fail() { echo 0 > "$OUT/reward.txt"; echo "FAIL: $*"; exit 0; }
 
 [ -f "$SUB/$HEADER" ] && [ ! -L "$SUB/$HEADER" ] || fail "header missing or a symlink"
 # Edited or deleted files fail; new files such as scratch tests are ignored.
