@@ -1,0 +1,34 @@
+{
+  "task": "pgm",
+  "metric": "bottom-level segments (= segments_per_level[0]), must be within SEGMENT_TOLERANCE of the optimal reference",
+  "gates": {
+    "allowed_files": {
+      "changed": [
+        "CMakeLists.txt",
+        "include/pgm/piecewise_linear_model.hpp",
+        "test/CMakeLists.txt",
+        "test/catch.hpp",
+        "test/main.cpp",
+        "test/tests.cpp",
+        "test/utils.hpp"
+      ],
+      "added": [
+        "UPSTREAM.md"
+      ],
+      "violations": [
+        "CMakeLists.txt",
+        "test/CMakeLists.txt",
+        "test/catch.hpp",
+        "test/main.cpp",
+        "test/tests.cpp",
+        "test/utils.hpp"
+      ],
+      "ok": false
+    }
+  },
+  "gate_failed": "allowed_files",
+  "reason": "files outside the allowed set changed: ['CMakeLists.txt', 'test/CMakeLists.txt', 'test/catch.hpp', 'test/main.cpp', 'test/tests.cpp', 'test/utils.hpp']",
+  "workloads": {},
+  "pass": 0,
+  "reward": 0
+}

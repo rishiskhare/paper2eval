@@ -1,0 +1,133 @@
+{
+    "id": "6019c98b-2056-4398-b1db-0aa3193898e5",
+    "task_name": "paper2eval/pgm",
+    "trial_name": "pgm__bL6bwse",
+    "trial_uri": "file:///Users/rishikhare/Desktop/paperbench-v2/jobs/2026-11-06__15-32-58/pgm__bL6bwse",
+    "task_id": {
+        "path": "tasks/pgm"
+    },
+    "source": null,
+    "task_checksum": "f8d5edc6fe777bbd8491306f08d42cfee0bcb30a4004501facc56834fc2cba1e",
+    "config": {
+        "task": {
+            "path": "tasks/pgm",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "pgm__bL6bwse",
+        "trials_dir": "jobs/2026-11-06__15-32-58",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "openai/gpt-5.6-luna",
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [
+                "api.openai.com"
+            ],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "80c861b4-94f7-41c7-b7eb-5711635ada6c",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.167.0",
+        "model_info": {
+            "name": "gpt-5.6-luna",
+            "provider": "openai"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 836423,
+        "n_cache_tokens": 792935,
+        "n_output_tokens": 14468,
+        "cost_usd": 0.04408825,
+        "model_usage": {
+            "openai/gpt-5.6-luna": {
+                "n_input_tokens": 836423,
+                "n_cache_tokens": 792935,
+                "n_output_tokens": 14468,
+                "cost_usd": 0.04408825
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0,
+            "pass": 0
+        }
+    },
+    "verifier_environment_mode": "separate",
+    "exception_info": null,
+    "started_at": "2026-11-06T20:33:01.174043Z",
+    "finished_at": "2026-11-06T20:38:25.184936Z",
+    "environment_setup": {
+        "started_at": "2026-11-06T20:33:01.210376Z",
+        "finished_at": "2026-11-06T20:33:04.720010Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-06T20:33:04.720118Z",
+        "finished_at": "2026-11-06T20:34:42.091616Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-06T20:34:42.092798Z",
+        "finished_at": "2026-11-06T20:37:45.196735Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-06T20:37:57.175663Z",
+        "finished_at": "2026-11-06T20:38:25.184854Z"
+    },
+    "step_results": null
+}

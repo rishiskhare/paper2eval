@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "tasks/pgm"
+    },
+    "trial_name": "pgm__7HhdWNj",
+    "trials_dir": "jobs/2026-11-06__15-29-07",
+    "agent": {
+        "name": "codex",
+        "model_name": "openai/gpt-5.6-luna",
+        "extra_allowed_hosts": [
+            "chatgpt.com",
+            "auth.openai.com"
+        ]
+    },
+    "job_id": "771a7f67-c259-4c4b-9b9f-97cd91bc4ec6"
+}

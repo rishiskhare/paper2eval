@@ -1,0 +1,22 @@
+Reading additional input from stdin...
+2026-11-06T20:26:57.922828Z ERROR codex_models_manager::manager: failed to refresh available models: Connection failed: error sending request
+{"type":"thread.started","thread_id":"01a1b28a-f6b7-7f50-8e69-ea68605dbe35"}
+2026-11-06T20:26:57.954956Z ERROR codex_models_manager::manager: failed to refresh available models: Connection failed: error sending request
+2026-11-06T20:26:58.024948Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+2026-11-06T20:27:00.993389Z ERROR codex_models_manager::manager: failed to refresh available models: Connection failed: error sending request
+{"type":"turn.started"}
+2026-11-06T20:27:01.035121Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+2026-11-06T20:27:01.255376Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+{"type":"error","message":"Reconnecting... 2/5 (stream disconnected before completion: tls handshake eof)"}
+2026-11-06T20:27:01.676394Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+{"type":"error","message":"Reconnecting... 3/5 (stream disconnected before completion: tls handshake eof)"}
+2026-11-06T20:27:02.458332Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+{"type":"error","message":"Reconnecting... 4/5 (stream disconnected before completion: tls handshake eof)"}
+2026-11-06T20:27:04.218368Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+{"type":"error","message":"Reconnecting... 5/5 (stream disconnected before completion: tls handshake eof)"}
+2026-11-06T20:27:07.641233Z ERROR codex_api::endpoint::responses_websocket: failed to connect to Responses WebSocket stage=Unknown
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Falling back from WebSockets to HTTPS transport. stream disconnected before completion: tls handshake eof"}}
+{"type":"error","message":"Reconnecting... waiting for network (Connection failed: error sending request)"}
+{"type":"error","message":"Reconnecting... waiting for network (Connection failed: error sending request)"}
+{"type":"error","message":"Reconnecting... waiting for network (Connection failed: error sending request)"}
+{"type":"error","message":"Reconnecting... waiting for network (Connection failed: error sending request)"}

@@ -1,0 +1,17 @@
+{
+    "job_name": "2026-11-06__15-50-52",
+    "agents": [
+        {
+            "name": "codex",
+            "model_name": "openai/gpt-5.6-luna",
+            "extra_allowed_hosts": [
+                "api.openai.com"
+            ]
+        }
+    ],
+    "tasks": [
+        {
+            "path": "tasks/pgm"
+        }
+    ]
+}

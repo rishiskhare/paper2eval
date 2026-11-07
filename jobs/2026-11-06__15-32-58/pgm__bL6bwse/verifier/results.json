@@ -1,0 +1,77 @@
+{
+  "task": "pgm",
+  "metric": "bottom-level segments (= segments_per_level[0]), must be within SEGMENT_TOLERANCE of the optimal reference",
+  "gates": {
+    "allowed_files": {
+      "changed": [
+        "include/pgm/piecewise_linear_model.hpp"
+      ],
+      "added": [],
+      "violations": [],
+      "ok": true
+    },
+    "clean_rebuild": {
+      "ok": true,
+      "errors": []
+    },
+    "correctness": {
+      "ok": false,
+      "failures": [
+        "ho_uniform64: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_lognormal: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_clustered: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_gaps: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_near_max: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_dense_runs: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_long_gaps: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+        "ho_mixed: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+      ]
+    }
+  },
+  "gate_failed": "correctness",
+  "reason": "ho_uniform64: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_lognormal: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_clustered: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_gaps: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_near_max: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_dense_runs: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_long_gaps: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0 | ho_mixed: index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0",
+  "workloads": {
+    "ho_uniform64": {
+      "sha256": "d98035d4049bef41b43805642cb6d97220f329f9afe2776dd020b9e241ec3240",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_lognormal": {
+      "sha256": "5ea679596e2064552b9aef215561e02e0649948f37ee659c1b6727be82435475",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_clustered": {
+      "sha256": "62af721cc063549469d95b448315038fca41f84401b1b34304edcd4499d16630",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_gaps": {
+      "sha256": "17471a4b6f05b6b565b5435501a666cb236a81d94b6fb3c99a218c1e4bf6bd98",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_near_max": {
+      "sha256": "14374fad718283c35eecc12e1073691b642f6ae15df06c67f98544e86f305fbe",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_dense_runs": {
+      "sha256": "d8aa36d54d8d2ae046317f59019cbf68005955bcc5e94c29a4416fb977451cc9",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_long_gaps": {
+      "sha256": "c41ea611db1ae9adc887b91fb368c283ed0ef6c9861b65e495387d77298216df",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    },
+    "ho_mixed": {
+      "sha256": "f5d289f50ef5f1e360d9c0a8373c78ababc71dfa979b8243ed89b3a92016b162",
+      "correct": false,
+      "reason": "index build failed (exit -6): terminate called after throwing an instance of 'std::overflow_error'\n  what():  Unexpected intercept < 0"
+    }
+  },
+  "pass": 0,
+  "reward": 0
+}
