@@ -2,19 +2,23 @@
 
 # paper2eval
 
-**Turn research papers into [Harbor](https://github.com/harbor-framework/harbor) evals that AI agents can't talk their way through.**
+**Can agents reproduce frontier research papers?**
 
-[Quickstart](#quickstart) · [First results](#first-results) · [How it works](#how-it-works) · [Add a paper](#add-your-own-paper)
+[Quickstart](#quickstart) · [How it works](#how-it-works) · [Add a paper](#add-your-own-paper) · [Recent work](#recent-work)
 
 </div>
 
 ---
 
-An agent gets a real paper and the authors' code with the main method cut out. Its job is to put the method back.
+paper2eval turns a paper and its original repo into a [Harbor](https://github.com/harbor-framework/harbor) eval. We strip
+the paper's core contribution from the codebase, and the agent has to reproduce it as faithfully, correctly and
+efficiently as possible.
 
-Passing the repo's tests isn't enough. A valid but wasteful method can pass them, so the grader also compares the result
-to the authors' version on the measure the paper cares about. No LLM judge, no partial credit: the code either matches
-the paper or it doesn't.
+Each attempt is verified in code, with no LLM judge and no partial credit, against:
+
+- **The authors' original tests**, which the agent can see.
+- **Hidden inputs**, which the agent never sees.
+- **An optimality target**, because a valid but wasteful method can pass the tests.
 
 ## Quickstart
 
@@ -41,35 +45,6 @@ Results land in `jobs/<timestamp>/`. The trace is in `agent/`, and the grader's 
 > [`scripts/harbor.sh`](scripts/harbor.sh) switches to Colima for that one command and leaves your default Docker
 > context alone.
 
-## First results
-
-GPT-5.6 Luna, running through Codex, took on the [PGM-index](https://github.com/gvinciguerra/PGM-index) task four times.
-It scored **0 of 4**, with three kinds of failure:
-
-| Run | Reward | What the grader caught | Cost |
-|---|---|---|---|
-| [`15-32-58`](jobs/2026-11-06__15-32-58/pgm__bL6bwse/verifier/test-stdout.txt) | **0** | Index build crashed on all 8 held-out datasets: `Unexpected intercept < 0` | $0.04 |
-| [`15-43-22`](jobs/2026-11-06__15-43-22/pgm__GJCeirr/verifier/test-stdout.txt) | **0** | Changed build and test files outside the one allowed header | $0.05 |
-| [`15-50-52`](jobs/2026-11-06__15-50-52/pgm__Z3Cg8bD/verifier/test-stdout.txt) | **0** | Too many segments on 21 of 24 cases, such as 377 against the optimal 276 | $0.09 |
-| [`16-11-25`](jobs/2026-11-06__16-11-25/pgm__Cmk2due/verifier/test-stdout.txt) | **0** | Too many segments on all 15 cases, from 1% to 42% over the authors' counts | $0.03 |
-
-The last two runs are the ones the eval exists to catch: lookups were correct on held-out data, but the segmentation
-wasn't as good as the paper's method.
-
-> [!IMPORTANT]
-> This is one model on one task, so it's a demo of the grader rather than a benchmark. The first three runs used an
-> earlier version of the grader, and two other runs were cancelled before grading.
-
-<details>
-<summary><b>Read the full trace of the latest run</b></summary>
-
-- Agent trace: [`trajectory.json`](jobs/2026-11-06__16-11-25/pgm__Cmk2due/agent/trajectory.json) and
-  [`codex.txt`](jobs/2026-11-06__16-11-25/pgm__Cmk2due/agent/codex.txt)
-- Grader output: [`test-stdout.txt`](jobs/2026-11-06__16-11-25/pgm__Cmk2due/verifier/test-stdout.txt)
-- Authors' counts: [`reference_counts.txt`](tasks/pgm/tests/reference_counts.txt)
-
-</details>
-
 ## How it works
 
 ```mermaid
@@ -93,17 +68,20 @@ place, and its internet is blocked except for its model API.
 | 4 | The result is as good as the authors' on the paper's metric | Valid methods that aren't the paper's |
 | 5 | The repo's own tests pass | Regressions |
 
-On the current grader, the reference solution scores 1 and an agent that does nothing scores 0.
+The reference solution scores 1, and an agent that does nothing scores 0.
 
 The instruction reads like an ordinary developer request. It names the file and the paper, and never explains the
 method or mentions grading.
 
 ## Tasks
 
-| Task | Paper | The agent must rebuild | Status |
-|---|---|---|---|
-| [`tasks/pgm/`](tasks/pgm/) | [PGM-index](https://github.com/gvinciguerra/PGM-index), VLDB 2020 | Optimal piecewise linear segmentation | Ready |
-| [`tasks/fsst/`](tasks/fsst/) | FSST | Not defined yet | Scaffold only |
+| Task | Paper | The agent must rebuild |
+|---|---|---|
+| [`tasks/pgm/`](tasks/pgm/) | [PGM-index](https://github.com/gvinciguerra/PGM-index), VLDB 2020 | Optimal piecewise linear segmentation |
+
+B-trees are great, but they spend huge amounts of memory on pointers. The PGM-index replaces them with learned linear
+models that map keys to their positions in sorted data. Here, the hidden inputs are new key sets, and the optimality
+target is the authors' segment count.
 
 Each task documents what it can't catch. See the [PGM-index limits](tasks/pgm/review/limits.md).
 
@@ -124,6 +102,13 @@ A paper is a good fit when:
 - It builds offline in minutes on Ubuntu 24.04, on amd64 and arm64.
 - Its license allows redistribution.
 
+## Recent work
+
+- [PaperBench](https://arxiv.org/abs/2504.01848) (OpenAI) has agents replicate ML papers from scratch, graded against
+  rubrics by an LLM judge.
+- [FrontierCS 2](https://arxiv.org/abs/2610.29932) (Berkeley SkyLab) deletes a paper's contribution from its code and
+  scores open-ended agent runs against the deleted code as the human reference.
+
 ## Repo layout
 
 | Path | Contents |
@@ -131,7 +116,6 @@ A paper is a good fit when:
 | [`tasks/`](tasks/) | Harbor tasks, one folder per paper |
 | [`scripts/harbor.sh`](scripts/harbor.sh) | Runs Harbor on a Docker engine that can enforce the agent's network block |
 | [`.claude/skills/paper-to-eval/`](.claude/skills/paper-to-eval/) | The skill for building a new task |
-| [`jobs/`](jobs/) | Past runs, including every trace above |
 
 ## License
 
